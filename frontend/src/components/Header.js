@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import Logo from "../assets/logo.png";
 
@@ -21,6 +21,14 @@ export const Header = () => {
     navigate(`/?q=${queryTerm}`);
     evt.target.reset();
   }
+
+  useEffect(() => {
+    if(darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
 
   return (
     <nav className="bg-slate-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:bg-slate-800">
