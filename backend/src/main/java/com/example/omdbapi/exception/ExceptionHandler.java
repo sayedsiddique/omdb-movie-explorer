@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 public class ExceptionHandler {
     @org.springframework.web.bind.annotation.ExceptionHandler(Exception.class)
     public ResponseEntity<ApiResponse<Void>> handle(Exception exception, HttpServletRequest request) {
+        exception.printStackTrace();
         return new ResponseEntity<ApiResponse<Void>>(new ApiResponse<>(
                 "Server not able to request the process at the moment. Please try again later.",
                 500
