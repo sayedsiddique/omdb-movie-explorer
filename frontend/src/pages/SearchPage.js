@@ -51,7 +51,7 @@ export const SearchPage = () => {
     <main>
       <section>
         <h2 className="dark:text-slate-50 text-slate-800 text-4xl">
-          {movies && movies.length === 0 ? noResultTitle : resultFoundTitle}
+          {movies && movies.length === 0 ? (queryTerm ? noResultTitle : "") : resultFoundTitle}
         </h2>
         <h2 className="dark:text-slate-50 text-slate-800 text-4xl">
           {items && items.data.Error ? errorTitle : ""}
